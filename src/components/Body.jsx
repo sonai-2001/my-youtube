@@ -1,10 +1,10 @@
 import React from 'react'
 import SideBar from './SideBar'
-import MainContainer from '../MainContainer'
+import MainContainer from './MainContainer'
 
 const Body = () => {
   return (
-    <div className='flex'>
+    <div className='flex overflow-x-hidden '>
      <SideBar/>
      <MainContainer/>
 

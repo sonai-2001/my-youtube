@@ -6,7 +6,7 @@ const SideBar = () => {
   console.log(isSideBarOpen);
   if (!isSideBarOpen) {
     return (
-      <div className=" shadow-lg h-[90vh] border-r-[1px]   px-3 md:px-7">
+      <div className=" shadow-lg h-[90vh]  border-r-[1px]    px-3 md:px-7">
         <div className="my-3">
           <i className="ri-home-5-fill text-xl md:text-2xl "></i>
         </div>
@@ -20,7 +20,7 @@ const SideBar = () => {
     );
   }
   return (
-    <div className=" shadow-xl h-[90vh] border-r-[1px]  ">
+    <div className=" shadow-xl h-[90vh] w-[10vw] border-r-[1px]  ">
       <div className="flex items-center my-3 justify-between pl-6 pr-14 bg-slate-50 hover:bg-slate-100 rounded-md">
         <i className="ri-home-5-fill text-xl md:text-2xl "></i>
         <h1 className="text-xs w-[3vw] ml-2">Home</h1>
