@@ -1,12 +1,18 @@
 import React from "react";
-
+import { useDispatch } from "react-redux";
+import { toggleSideBar } from "../utils/sideToggleSlice";
 const Header = () => {
+  
+  const dispatch=useDispatch()
+  const handleHambergerMenu=()=>{
+         dispatch(toggleSideBar())
+  }
   return (
-    <div className="h-[10vh] px-4 md:px-8 py-1 flex items-center justify-between">
+    <div className="h-[10vh] px-2  py-1 flex items-center justify-between">
      
      {/* logo and hamberger menu */}
       <div className="flex items-center">
-        <img className="h-4 md:h-8" src="ham.png" alt="" />
+        <img onClick={handleHambergerMenu} className="h-4 cursor-pointer md:h-8" src="ham.png" alt="" />
         <img className="h-10 md:h-14 object-cover" src="youtube-logo.png" alt="youtube" />
       </div>
       {/* search bar */}
