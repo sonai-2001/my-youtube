@@ -4,7 +4,7 @@ import MainContainer from './MainContainer'
 
 const Body = () => {
   return (
-    <div className='flex overflow-x-hidden '>
+    <div className='flex  relative '>
      <SideBar/>
      <MainContainer/>
 
