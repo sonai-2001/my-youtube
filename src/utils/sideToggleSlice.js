@@ -10,9 +10,13 @@ const sidebarToggleSlice=createSlice(
         reducers:{
             toggleSideBar:(state,payLoad)=>{
                     state.isSideBarOpen=!state.isSideBarOpen;
+            },
+            closeSideBar:(state)=>{
+                state.isSideBarOpen=false
             }
+
         }
     }
     )
-    export const {toggleSideBar}=sidebarToggleSlice.actions
+    export const {toggleSideBar,closeSideBar}=sidebarToggleSlice.actions
     export default sidebarToggleSlice.reducer;

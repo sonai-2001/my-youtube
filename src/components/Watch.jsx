@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+// it is the function to make the sidebar close..
+import { closeSideBar } from "../utils/sideToggleSlice";
+import { useDispatch } from "react-redux";
+
 
 const Watch = () => {
   //   use watch search param for find the search param value
@@ -9,17 +13,25 @@ const Watch = () => {
   const [urlSearchParam] = searchparam;
   console.log(urlSearchParam.get("v"));
   const watchId = urlSearchParam.get("v");
+  // dispatch function to dispatch the closeSidebar function automaticaly when this watch page rendered..
+  const dispatch=useDispatch();
+
+  useEffect(()=>{
+      dispatch(closeSideBar())
+  },[])
   return (
-    <div>
+    <div className="rounded-md">
       <iframe
-        width="560"
-        height="315"
-        src={"https://www.youtube.com/embed/"+watchId}
+        className="  ml-16 md:ml-20 rounded-md w-[70vw] md:w-[60vw] h-[50vh] md:h-[70vh]"
+        
+        src={"https://www.youtube.com/embed/" + watchId + "?autoplay=1"}
         title="YouTube video player"
         frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
+        allow="fullscreen; autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+
+        // referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
+        
       ></iframe>
     </div>
   );
