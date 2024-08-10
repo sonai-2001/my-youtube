@@ -1,12 +1,12 @@
 import React from 'react'
 import SideBar from './SideBar'
-import MainContainer from './MainContainer'
+import { Outlet } from 'react-router-dom'
 
 const Body = () => {
   return (
-    <div className='flex  relative '>
+    <div className='flex  relative  overflow-y-hidden'>
      <SideBar/>
-     <MainContainer/>
+      <Outlet/>
 
     </div>
   )
