@@ -6,6 +6,7 @@ import store from './utils/store';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import VideoContainer from './components/VideoContainer';
 import Watch from './components/Watch';
+import MainContainer from './components/MainContainer';
 
 function App() {
  
@@ -16,8 +17,8 @@ function App() {
     children:[
          {
           path:"/",
-          element:<VideoContainer/>
-         },
+          element:<MainContainer/>
+        },
          {
           path:"/watch",
           element:<Watch/>
@@ -30,7 +31,9 @@ function App() {
    <Provider store={store}>
       <div>
       <Header/>
-      <RouterProvider router={appRouter}/>
+      <RouterProvider router={appRouter}>
+      
+      </RouterProvider>
     </div>
    </Provider>
   );
