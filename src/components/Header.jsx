@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenuOpen } from "../utils/toggleSlice";
 import { Link } from "react-router-dom";
 import { search_api } from "../utils/constants";
+import { setCache } from "../utils/searchSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
   const[open,setOpen]=useState(false)
   const [items,setItems]=useState(null)
+  const cache= useSelector((store)=>store.search)
+  console.log(cache)
   useEffect(()=>{
     
     const getData=async ()=>{
@@ -21,14 +24,25 @@ const Header = () => {
       const data=await raw.json()
       console.log(data.items)
       setItems(data.items)
+      dispatch(setCache({
+        [search]: data.items
+      }))
      }
-          const timer=setTimeout(()=>{
-           getData()
-           },700)
+          if(cache[search]){
+                setItems(cache[search])
+                setOpen(true)
+    
+          }
+          else{
+            const timer=setTimeout(()=>{
+              getData()
+              },700)
+          
 
           return ()=>{
             clearTimeout(timer)
           }
+        }
   },[search])
   const handleMenu = () => {
     dispatch(toggleMenuOpen());
