@@ -4,7 +4,7 @@ export const YOUTUBE_API =
   Api_key;
 
 export const search_api =
-  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&type=videos&key=" +
+  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&type=video&key=" +
   Api_key +
   "&q=";
   export const videoApi="https://www.youtube.com/embed/"
