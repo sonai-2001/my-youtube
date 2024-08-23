@@ -7,4 +7,5 @@ export const search_api =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&type=video&key=" +
   Api_key +
   "&q=";
-  export const videoApi="https://www.youtube.com/embed/"
+  export const videoUrl="https://www.youtube.com/embed/";
+  export const comment_api="https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults=100&key="+Api_key+"&videoId="
