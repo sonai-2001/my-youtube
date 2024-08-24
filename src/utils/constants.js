@@ -8,4 +8,6 @@ export const search_api =
   Api_key +
   "&q=";
   export const videoUrl="https://www.youtube.com/embed/";
-  export const comment_api="https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults=100&key="+Api_key+"&videoId="
+  export const comment_api="https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults=50&key="+Api_key+"&videoId="
+
+  export const replies_api ="https://www.googleapis.com/youtube/v3/comments?part=snippet&maxResults=50&key="+Api_key+"&parentId="

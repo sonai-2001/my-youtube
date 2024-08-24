@@ -11,7 +11,7 @@ import store from './utils/store'
 const App = () => {
   return (
     <Provider store={store}>
-     <div className='overflow-hidden'>
+     <div className='overflow-hidden h-screen'>
      <Header/>
      {/* sidebar and maincontainer holder */}
      <div className='flex'>
